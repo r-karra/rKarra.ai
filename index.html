@@ -6,175 +6,199 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>R. Karra</title>
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    color:#222;
-    margin:0;
-    line-height:1.7;
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,sans-serif;
+color:#222;
+background:#fff;
+line-height:1.7;
 }
 
 .container{
-    width:900px;
-    max-width:92%;
-    margin:auto;
-}
-
-.row{
-    display:flex;
+width:900px;
+max-width:92%;
+margin:auto;
 }
 
 #dhead{
-    padding:50px 0;
+padding:60px 0 40px;
+}
+
+.row{
+display:flex;
+align-items:flex-start;
+gap:40px;
 }
 
 #dpic{
-    width:220px;
+flex-shrink:0;
 }
 
 .ppic{
-    width:180px;
-    border-radius:10px;
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:12px;
 }
 
 #ddesc{
-    flex:1;
+flex:1;
 }
 
 h1{
-    font-size:42px;
-    margin-bottom:8px;
+font-size:48px;
+margin:0;
 }
 
-h2{
-    font-size:24px;
-    font-weight:400;
-    margin-top:0;
-    color:#444;
+.subtitle{
+font-size:22px;
+font-weight:400;
+margin:12px 0 24px;
+color:#555;
 }
 
-#dico{
-    display:flex;
-    gap:18px;
-    margin-top:25px;
+.links{
+display:flex;
+flex-wrap:wrap;
+gap:18px;
 }
 
-.iico{
-    width:24px;
+.links a{
+text-decoration:none;
+color:#0066cc;
+font-weight:500;
+}
+
+.links a:hover{
+text-decoration:underline;
 }
 
 hr{
-    border:none;
-    border-top:1px solid #ddd;
+border:none;
+border-top:1px solid #ddd;
+margin:0;
 }
 
-.entry{
-    display:flex;
-    margin:35px 0;
-}
-
-.timespan{
-    width:130px;
-    font-weight:600;
-}
-
-.ico{
-    width:70px;
-    position:relative;
-}
-
-.entry-dot{
-    width:14px;
-    height:14px;
-    border-radius:50%;
-    background:#444;
-    margin:12px auto;
-}
-
-.desc{
-    flex:1;
+.section{
+padding:50px 0;
 }
 
 .ctitle{
-    font-size:30px;
-    font-weight:700;
-    margin:50px 0 25px 0;
+font-size:32px;
+font-weight:700;
+margin-bottom:30px;
 }
 
-.project,
-.pub{
-    margin-bottom:20px;
+.entry{
+display:grid;
+grid-template-columns:120px 1fr;
+gap:30px;
+margin-bottom:28px;
 }
 
-.pub-title{
-    font-weight:700;
+.timespan{
+font-weight:700;
+color:#666;
 }
 
-.pub-venue{
-    color:#666;
-}
-
-.pub-authors{
-    color:#777;
-}
-
-.card-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+.desc{
+font-size:17px;
 }
 
 .card{
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:15px;
+border:1px solid #e5e5e5;
+border-radius:12px;
+padding:20px;
+margin-bottom:18px;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-top:0;
+margin-bottom:10px;
+}
+
+.pub{
+margin-bottom:22px;
+}
+
+.pub-title{
+font-weight:700;
+}
+
+.pub-venue{
+color:#666;
+}
+
+.pub-authors{
+color:#888;
+font-size:15px;
 }
 
 ul{
-    padding-left:20px;
+padding-left:22px;
 }
 
 li{
-    margin-bottom:10px;
+margin-bottom:10px;
 }
 
 a{
-    color:#0066cc;
-    text-decoration:none;
+color:#0066cc;
+text-decoration:none;
 }
 
 a:hover{
-    text-decoration:underline;
+text-decoration:underline;
+}
+
+.gray{
+background:#f5f5f5;
 }
 
 .footer{
-    padding:80px 0;
-    color:#666;
+padding:80px 0;
+color:#777;
+font-size:15px;
 }
 
 @media(max-width:768px){
 
 .row{
-    flex-direction:column;
+flex-direction:column;
 }
 
-#dpic{
-    width:auto;
-    margin-bottom:20px;
+.ppic{
+width:150px;
+height:150px;
+}
+
+h1{
+font-size:38px;
+}
+
+.subtitle{
+font-size:18px;
 }
 
 .entry{
-    flex-direction:column;
-}
-
-.timespan{
-    width:auto;
-    margin-bottom:10px;
+grid-template-columns:1fr;
+gap:8px;
 }
 
 }
@@ -184,7 +208,6 @@ a:hover{
 </head>
 
 <body>
-
 
 <div id="dhead" class="container">
 
@@ -200,13 +223,13 @@ a:hover{
 
 <h1>R. Karra</h1>
 
-<h2>
+<div class="subtitle">
 
-I like building Quantum AI systems, Large Language Models and educational tools 🧠⚛️🤖
+I build Quantum AI systems, LLMs and educational tools 🧠⚛️🤖
 
-</h2>
+</div>
 
-<div id="dico">
+<div class="links">
 
 <a href="https://github.com/r-karra">GitHub</a>
 
@@ -226,72 +249,41 @@ I like building Quantum AI systems, Large Language Models and educational tools 
 
 <hr>
 
+<div class="container section">
 
-<div id="history" class="container">
-
-<div class="entry">
-
-<div class="timespan">
-
-2026 -
-
-</div>
-
-<div class="ico">
-
-<div class="entry-dot"></div>
-
-</div>
-
-<div class="desc">
-
-Building Quantum AI projects, researching LLMs, and contributing to open-source AI ecosystems.
-
-</div>
-
-</div>
-
+<div class="ctitle">timeline</div>
 
 <div class="entry">
 
-<div class="timespan">
-
-2025 - 2026
-
-</div>
-
-<div class="ico">
-
-<div class="entry-dot"></div>
-
-</div>
+<div class="timespan">2026 →</div>
 
 <div class="desc">
 
-Machine Learning Internship at Gradtwin Software. Worked on supervised learning, clustering, feature engineering and ML pipelines.
+Building Quantum AI projects, studying frontier AI research and contributing to open source.
 
 </div>
 
 </div>
-
 
 <div class="entry">
 
-<div class="timespan">
-
-2024
-
-</div>
-
-<div class="ico">
-
-<div class="entry-dot"></div>
-
-</div>
+<div class="timespan">2025</div>
 
 <div class="desc">
 
-Graduated from Osmania University (B.Sc. Computer Science, Physics and Mathematics).
+Machine Learning Internship at Gradtwin Software.
+
+</div>
+
+</div>
+
+<div class="entry">
+
+<div class="timespan">2024</div>
+
+<div class="desc">
+
+B.Sc. Computer Science, Physics and Mathematics, Osmania University.
 
 </div>
 
@@ -299,278 +291,85 @@ Graduated from Osmania University (B.Sc. Computer Science, Physics and Mathemati
 
 </div>
 
+<div class="container section">
 
-
-<div class="container">
-
-<div class="ctitle">
-
-bio
-
-</div>
+<div class="ctitle">bio</div>
 
 <p>
 
-R. Karra is an aspiring Quantum AI researcher and AI engineer interested in Quantum Machine Learning, Large Language Models, AI for Science, and scalable research systems.
-
-His long-term goal is to contribute to frontier AI research.
+Aspiring Quantum AI researcher interested in Quantum Machine Learning, LLMs, JAX and AI for Science.
 
 </p>
 
 </div>
 
+<div class="container section">
 
+<div class="ctitle">projects</div>
 
-<div class="container">
+<div class="card">
 
-<div class="ctitle">
+<h3>Super Book LLM</h3>
 
-projects
-
-</div>
-
-
-<div class="project">
-
-<b>Super Book LLM</b>
-
-<p>
-
-An educational AI system that combines papers, videos, notes and documentation into a single learning environment.
-
-</p>
+Educational AI system combining papers, videos and notes.
 
 </div>
 
+<div class="card">
 
-<div class="project">
+<h3>Quantum ML Playground</h3>
 
-<b>Quantum ML Playground</b>
-
-<p>
-
-Interactive visualizations for quantum circuits, quantum states and machine learning concepts.
-
-</p>
+Interactive quantum computing visualizations.
 
 </div>
 
+<div class="card">
 
-<div class="project">
+<h3>AI Research Hub</h3>
 
-<b>AI Research Hub</b>
-
-<p>
-
-Centralized platform for research papers, GitHub repositories and documentation.
-
-</p>
+Centralized repository of papers and documentation.
 
 </div>
 
 </div>
 
+<div class="container section">
 
-
-<div class="container">
-
-<div class="ctitle">
-
-publications
-
-</div>
-
-
-<div class="pub">
-
-<div class="pub-title">
-
-Quantum AI Research Notes
-
-</div>
-
-<div class="pub-venue">
-
-2026
-
-</div>
-
-<div class="pub-authors">
-
-R. Karra
-
-</div>
-
-</div>
-
-
-<div class="pub">
-
-<div class="pub-title">
-
-LLMs + Quantum Computing Explorations
-
-</div>
-
-<div class="pub-venue">
-
-2026
-
-</div>
-
-<div class="pub-authors">
-
-R. Karra
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<div style="background:#f3f3f3;padding:10px 0;">
-
-<div class="container">
-
-<div class="ctitle">
-
-featured writing
-
-</div>
-
+<div class="ctitle">featured writing</div>
 
 <ul>
 
-<li>
+<li><a href="https://rkarra.bearblog.dev/">Quantum AI Notes</a></li>
 
-<a href="https://rkarra.bearblog.dev/">
+<li><a href="https://rkarra.bearblog.dev/">Building LLMs with JAX</a></li>
 
-Quantum AI Notes
+<li><a href="https://rkarra.bearblog.dev/">Quantum ML Roadmap</a></li>
 
-</a>
+</ul>
 
-</li>
+</div>
 
+<div class="gray">
 
-<li>
+<div class="container section">
 
-<a href="https://rkarra.bearblog.dev/">
+<div class="ctitle">misc</div>
 
-Building LLMs using JAX
+<ul>
 
-</a>
+<li>Main website: https://r-karra.github.io/</li>
 
-</li>
+<li>Blog: https://rkarra.bearblog.dev/</li>
 
+<li>Research interests: Quantum AI + LLMs</li>
 
-<li>
-
-<a href="https://rkarra.bearblog.dev/">
-
-Quantum Machine Learning Roadmap
-
-</a>
-
-</li>
+<li>0 frameworks used.</li>
 
 </ul>
 
 </div>
 
 </div>
-
-
-
-<div class="container">
-
-<div class="ctitle">
-
-research interests
-
-</div>
-
-
-<ul>
-
-<li>Quantum Computing</li>
-
-<li>Quantum Machine Learning</li>
-
-<li>Large Language Models</li>
-
-<li>JAX Ecosystem</li>
-
-<li>AI Agents</li>
-
-<li>AI for Science</li>
-
-<li>Scientific Computing</li>
-
-</ul>
-
-</div>
-
-
-
-<div class="container">
-
-<div class="ctitle">
-
-misc
-
-</div>
-
-
-<ul>
-
-<li>
-
-Main website:
-
-<a href="https://r-karra.github.io/">
-
-r-karra.github.io
-
-</a>
-
-</li>
-
-
-<li>
-
-Blog:
-
-<a href="https://rkarra.bearblog.dev/">
-
-rkarra.bearblog.dev
-
-</a>
-
-</li>
-
-
-<li>
-
-Current focus:
-
-Quantum AI + LLM research.
-
-</li>
-
-
-<li>
-
-0 frameworks were used to build this website.
-
-</li>
-
-</ul>
-
-</div>
-
-
 
 <div class="container footer">
 
